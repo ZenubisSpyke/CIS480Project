@@ -1,0 +1,48 @@
+
+.half-split-column {
+    float: left;
+    width: 50%;
+}
+.half-split-row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.screenCenter {
+    margin: auto;
+    width: fit-content;
+    border: 3px solid #73AD21;
+    padding: 10px;
+}
+.screenCenter > form > h3 {
+    text-align: right;
+}
+.screenCenter > form > h4 {
+    text-align: center;
+}
+.screenCenter > form > input {
+    display: block;
+    margin: auto;
+}
+.logout-button {
+    width:5em;
+    display: block;
+    margin-left: auto;
+    margin-right: 0;
+    padding-right: 1em;
+}
+
+.achievement-grid-container {
+    display: grid;
+    grid-template-areas:
+      'uLeft uLeft uLeft console console uRight uRight uRight'
+      'lLeft lLeft lLeft lLeft lRight lRight lRight lRight';
+    grid-gap: 2em;
+    padding: 2em;
+}
+.achUpLeft   { grid-area: uLeft; }
+.achCons     { grid-area: console; }
+.achUpRight  { grid-area: uRight; }
+.achLowLeft  { grid-area: lLeft; }
+.achLowRight { grid-area: lRight; }

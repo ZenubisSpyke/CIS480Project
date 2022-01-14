@@ -1,0 +1,13 @@
+START TRANSACTION;
+CREATE TABLE `codbo` (
+  `AchievementId` int(11) NOT NULL,
+  `Achievement` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+INSERT INTO `codbo` (`AchievementId`, `Achievement`) VALUES
+	(1, 'Death to Dictators');
+ALTER TABLE `codbo`
+	ADD PRIMARY KEY (`AchievementId`);
+ALTER TABLE `codbo`
+	MODIFY `AchievementId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+COMMIT;
