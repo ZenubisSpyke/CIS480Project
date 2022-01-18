@@ -3,8 +3,9 @@ session_start();
 require_once('../util/security.php');
 
 Security::checkHTTPS();
+Security::checkAuthority($_SESSION['user']);
 
-$userName = 'TestName';
+$userName = $_SESSION['user'];
 
 if (isset($_POST['logout'])) {
     Security::logout();

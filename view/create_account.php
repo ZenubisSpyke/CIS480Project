@@ -23,7 +23,7 @@ $error_msg = 'Test Input';
         <h3>UserName: <input type="text" name="userNameEntry"></h3>           
         <h3>Password: <input type="password" class="alignRight" name="passwordEntry"></h3>           
         <h3><span style="font-size:70%; text-align:center;">Must contain an upper and lowercase letter,
-            <br>a number, and a special character (~`! @#$%^&*()?)</span></h3>
+            <br>a number, a special character, and be at least 8 characters long.</span></h3>
         <h3>Re-Enter Password: <input type="password" name="passwordReEntry"></h3>           
         <input type="submit" class="submit" value="Create Account" name="logIn">
     </form>

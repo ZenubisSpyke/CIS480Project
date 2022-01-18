@@ -3,13 +3,14 @@ session_start();
 require_once('../util/security.php');
 
 Security::checkHTTPS();
+Security::checkAuthority($_SESSION['user']);
 
-$login_msg = 'Test Input';
-$userName = 'TestName';
+$userName = $_SESSION['user'];
 
 if (isset($_POST['logout'])) {
     Security::logout();
 }
+
 //Code for button links to user pages
 if (isset($_POST['steamAchievements'])) {
     $_SESSION['steam'] = true;

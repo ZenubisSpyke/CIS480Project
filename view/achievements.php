@@ -4,8 +4,9 @@ require_once('../util/security.php');
 require_once('../util/achievementLogo.php');
 
 Security::checkHTTPS();
+Security::checkAuthority($_SESSION['user']);
 
-$userName = 'TestName';
+$userName = $_SESSION['user'];
 $friendName = 'TestFriend';
 
 if (isset($_POST['logout'])) {
@@ -41,7 +42,7 @@ if (isset($_POST['userHome'])) {
     <form method='POST'>
         <div class="achievement-grid-container">
             <div class="achUpLeft">
-                <p style="text-align:left;">Search for a specific game or achievement:</p>
+                <p style="text-align:left;">Search for achievements by game:</p>
                 <input type=text name=achievementSearchInput style="float:left;">
                 <input type=button value=Search name=searchButton style="float:left;">
                 <br> <br>

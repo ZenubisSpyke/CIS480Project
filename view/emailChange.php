@@ -1,17 +1,30 @@
 <?php
 session_start();
 require_once('../util/security.php');
+require_once('../controller/user.php');
+require_once('../controller/user_controller.php');
 
 Security::checkHTTPS();
+Security::checkAuthority($_SESSION['user']);
 
-$userName = 'TestName';
-$userEmail = 'Test@Email.com';
+$userName = $_SESSION['user'];
+$userEmail = UserController::getUserEmail($_SESSION['user']);
+$emailErr = '';
 
 if (isset($_POST['logout'])) {
     Security::logout();
 }
 if (isset($_POST['userHome'])) {
     header('Location: userHome.php');
+}
+if (isset($_POST['submit']) & isset($_POST['emailChange'])) {
+    $newEmail = $_POST['emailChange'];
+    if (!filter_var($newEmail, FILTER_VALIDATE_EMAIL)) {
+        $emailErr = "Invalid email format";
+    } else {
+        UserController::updateEmail($_SESSION['user'], $_POST['emailChange']);
+        header("Location: accountSettings.php");
+    }
 }
 ?>
 <html>    
@@ -42,10 +55,11 @@ if (isset($_POST['userHome'])) {
         <div class="screenCenter">
             <form method='POST'>              
                 <h3 style=text-align:center>Enter new email: </h3>
-                <input type="text" value="<?php echo $userEmail;?>" name="passwordChange">  
-                <input type="submit" value="Change Email" name="emailChange"> 
+                <input type="text" value="<?php echo $userEmail;?>" name="emailChange">  
+                <input type="submit" value="Change Email" name="submit"> 
             </form>
         </div>
+    <h2 style="text-align:center; color:red;"><?php echo $emailErr; ?></h2>
     </body>
     <div class="footer" id="footer"><a class="background-credit" href="https://www.vecteezy.com/free-vector/header">Backgrounds: Header Vectors by Vecteezy</a></div>
 </html>

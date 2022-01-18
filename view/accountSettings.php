@@ -1,11 +1,14 @@
 <?php
 session_start();
 require_once('../util/security.php');
+require_once('../controller/user.php');
+require_once('../controller/user_controller.php');
 
 Security::checkHTTPS();
+Security::checkAuthority($_SESSION['user']);
 
-$userName = 'TestName';
-$userEmail = 'Test@Email.com';
+$userName = $_SESSION['user'];
+$userEmail = UserController::getUserEmail($_SESSION['user']);
 
 if (isset($_POST['logout'])) {
     Security::logout();
