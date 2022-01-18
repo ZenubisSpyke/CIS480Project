@@ -1,9 +1,9 @@
 <?php
 class Database {
     private $host = 'localhost';
-    private $dbname = 'cis367_wk3final';
-    private $username = 'cis367final_user';
-    private $password = '6TusdNdKdUoACkHm';
+    private $dbname = 'cis480project';
+    private $username = 'ecpi_user';
+    private $password = '(qJ[/4K$i2Ehyys';
 
     private $conn;
     private $conn_error = '';
