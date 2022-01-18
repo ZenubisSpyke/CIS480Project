@@ -10,10 +10,9 @@ class Security {
 
     public static function logout() {
         unset($_SESSION);
-
         unset($_POST);
-        
-        $_SESSION['logout_msg'] = 'Successfully logged out.';
+        $_SESSION = array();
+        session_destroy();
         header('Location: ../home.php');
         exit();
     }
@@ -21,7 +20,7 @@ class Security {
     public static function checkAuthority($auth) {
         if (!isset($_SESSION[$auth]) || !$_SESSION[$auth]) {
             $_SESSION['logout_msg'] = 'Current login unauthorized for 
-                this page.';
+                attempted page.';
                 header('Location: login.php');
                 exit();
         }
