@@ -29,5 +29,7 @@ Security::checkHTTPS();
         accomplished, view them in one place, and compare them to your friends!</p>
     </body> <br>
     <h3><a href="view/userHome.php">User Home</a></h3>
+    <h3><a href="view/db_conn_status.php">Connection Status</a></h3>
+    <h3><a href="view/temp_add_achievement.php">Add Achievement</a></h3>
     <div class="footer" id="footer"><a class="background-credit" href="https://www.vecteezy.com/free-vector/header">Backgrounds: Header Vectors by Vecteezy</a></div>
 </html>

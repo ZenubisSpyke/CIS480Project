@@ -6,6 +6,7 @@ Security::checkHTTPS();
 Security::checkAuthority($_SESSION['user']);
 
 $userName = $_SESSION['user'];
+$_SESSION['friend'] = '';
 
 if (isset($_POST['logout'])) {
     Security::logout();
@@ -13,39 +14,39 @@ if (isset($_POST['logout'])) {
 
 //Code for button links to user pages
 if (isset($_POST['steamAchievements'])) {
-    $_SESSION['steam'] = true;
-    $_SESSION['ps'] = false;
-    $_SESSION['xbox'] = false;
+    $_SESSION['Steam'] = true;
+    $_SESSION['Playstation'] = false;
+    $_SESSION['XBox'] = false;
     header("Location: achievements.php");
 }
 if (isset($_POST['psAchievements'])) {
-    $_SESSION['steam'] = false;
-    $_SESSION['ps'] = true;
-    $_SESSION['xbox'] = false;
+    $_SESSION['Steam'] = false;
+    $_SESSION['Playstation'] = true;
+    $_SESSION['XBox'] = false;
     header("Location: achievements.php");
 }
 if (isset($_POST['xboxAchievements'])) {
-    $_SESSION['steam'] = false;
-    $_SESSION['ps'] = false;
-    $_SESSION['xbox'] = true;
+    $_SESSION['Steam'] = false;
+    $_SESSION['Playstation'] = false;
+    $_SESSION['XBox'] = true;
     header("Location: achievements.php");
 }
 if (isset($_POST['friends'])) {
-    $_SESSION['steam'] = false;
-    $_SESSION['ps'] = false;
-    $_SESSION['xbox'] = false;
+    $_SESSION['Steam'] = false;
+    $_SESSION['Playstation'] = false;
+    $_SESSION['XBox'] = false;
     header("Location: friends.php");
 }
 if (isset($_POST['addAchievement'])) {
-    $_SESSION['steam'] = false;
-    $_SESSION['ps'] = false;
-    $_SESSION['xbox'] = false;
+    $_SESSION['Steam'] = false;
+    $_SESSION['Playstation'] = false;
+    $_SESSION['XBox'] = false;
     header("Location: addAchievement.php");
 }
 if (isset($_POST['accountSettings'])) {
-    $_SESSION['steam'] = false;
-    $_SESSION['ps'] = false;
-    $_SESSION['xbox'] = false;
+    $_SESSION['Steam'] = false;
+    $_SESSION['Playstation'] = false;
+    $_SESSION['XBox'] = false;
     header("Location: accountSettings.php");
 }
 ?>

@@ -46,3 +46,24 @@
 .achUpRight  { grid-area: uRight; }
 .achLowLeft  { grid-area: lLeft; }
 .achLowRight { grid-area: lRight; }
+
+.left-right-grid-split {
+    display: grid;
+    grid-template-areas:
+        'halfLeft halfRight';
+    grid-gap: 2em;
+    padding: 2em;
+}
+.halfLeft   { grid-area: halfLeft; }
+.halfRight  { grid-area: halfRight; }
+
+table {
+    border: 1px solid black;
+    border-collapse: collapse;
+    margin-bottom: 1em;
+}
+td, th {
+    border: 1px dashed black;
+    padding: .2em .5em .2em .5em;
+    text-align: left;
+}
